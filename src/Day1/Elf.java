@@ -3,7 +3,7 @@ package Day1;
 import java.util.List;
 
 public class Elf {
-	List<Integer> foodItemCalories;
+	private final List<Integer> foodItemCalories;
 
 	public Elf(String s) {
 		foodItemCalories = s.lines().map(Integer::parseInt).toList();

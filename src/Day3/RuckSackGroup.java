@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RuckSackGroup {
-	List<String> ruckSacks = new ArrayList<>();
+	private final List<String> ruckSacks = new ArrayList<>();
 
 	public RuckSackGroup(String r1, String r2, String r3) {
 		ruckSacks.add(r1);

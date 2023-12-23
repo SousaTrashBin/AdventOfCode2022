@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Round {
-	char opponentPlay;
-	char myPlay;
+	private final char opponentPlay;
+	private final char myPlay;
 
 	public Round(String s) {
 		opponentPlay = s.charAt(0);

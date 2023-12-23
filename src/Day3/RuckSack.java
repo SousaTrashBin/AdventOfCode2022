@@ -1,8 +1,8 @@
 package Day3;
 
 public class RuckSack {
-	String firstCompartment;
-	String secondCompartment;
+	private final String firstCompartment;
+	private final String secondCompartment;
 
 	public RuckSack(String s) {
 		firstCompartment = s.substring(0, s.length() / 2);
