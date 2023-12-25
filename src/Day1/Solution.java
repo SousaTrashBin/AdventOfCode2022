@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Solution {
 	public static void main(String[] args) throws IOException {
-		List<Elf> listOfElfs = Arrays.stream(Files.readString(Path.of("src/ao01/input.txt")).split("\n\n"))
+		List<Elf> listOfElfs = Arrays.stream(Files.readString(Path.of("src/Day1/input.txt")).split("\n\n"))
 				.map(Elf::new).toList();
 		Part1(listOfElfs);
 		Part2(listOfElfs);
