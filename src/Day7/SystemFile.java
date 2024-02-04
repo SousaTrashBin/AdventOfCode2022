@@ -1,12 +1,12 @@
 package Day7;
 
 public interface SystemFile {
-	public int getSize();
+	int getSize();
 
-	public String getName();
+	String getName();
 
 	@Override
-	public String toString();
+	String toString();
 
-	public Folder getParentFolder();
+	Folder getParentFolder();
 }

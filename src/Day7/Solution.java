@@ -17,7 +17,6 @@ public class Solution {
 		int minRequiredSpace = 30000000 - (70000000 - mainSystemFolder.getSize());
 		System.out.println("Part 2 -> " + foldersList.stream().map(Folder::getSize)
 				.filter(size -> size >= minRequiredSpace).reduce(Math::min).orElse(0));
-		System.out.println(mainSystemFolder.toString());
 		Folder.printFolderStructure(mainSystemFolder, "");
 	}
 
