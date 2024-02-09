@@ -59,7 +59,7 @@ public class Folder implements SystemFile {
 			if (file instanceof Folder) {
 				printFolderStructure((Folder) file, prefix + "  ");
 			} else {
-				System.out.println(prefix + "  - " + file.getName() + " (file, size=" + ((File) file).getSize() + ")");
+				System.out.println(prefix + "  - " + file.getName() + " (file, size=" + file.getSize() + ")");
 			}
 		}
 	}
