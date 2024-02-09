@@ -22,7 +22,7 @@ public class Solution {
 
 	private static void buildFileSystem(Folder mainSystemFolder, List<Folder> allFolders) throws IOException {
 		Folder currentFolder = null;
-		List<String> lines = Files.readString(Path.of("src/Day7/input.txt")).lines().toList();
+		List<String> lines = Files.readString(Path.of("inputFiles/Day7.txt")).lines().toList();
 		for (int i = 0; i < lines.size(); i++) {
 			String currentLine = lines.get(i);
 			// Handles the change directory command (cd)

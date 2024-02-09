@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Solution {
 	public static void main(String[] args) throws IOException {
-		Path filePath = Path.of("src/Day5/input.txt");
+		Path filePath = Path.of("inputFiles/Day5.txt");
 		CrateStack crateStack = new CrateStack(Files.readString(filePath).split("\n\n")[0]);
 		List<Action> actionList = Files.readString(filePath).split("\n\n")[1].lines().map(Action::new).toList();
 		Part1(actionList, crateStack.copy());

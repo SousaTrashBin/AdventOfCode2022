@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Solution {
 	public static void main(String[] args) throws IOException {
-		Path FilePath = Path.of("src/Day3/input.txt");
+		Path FilePath = Path.of("inputFiles/Day3.txt");
 		Part1(FilePath);
 		Part2(FilePath);
 	}

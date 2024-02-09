@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 public class Solution {
 	public static void main(String[] args) throws IOException {
-		Path filePath = Path.of("src/Day9/input.txt");
+		Path filePath = Path.of("inputFiles/Day9.txt");
 		Part1(filePath);
 		Part2(filePath);
 	}

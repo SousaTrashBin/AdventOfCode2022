@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Solution {
 	public static void main(String[] args) throws IOException {
-		String signal = Files.readString(Path.of("src/Day6/input.txt"));
+		String signal = Files.readString(Path.of("inputFiles/Day6.txt"));
 		System.out.println("Part 1 -> " + getStartOfPacketMarker(signal, 4));
 		System.out.println("Part 2 -> " + getStartOfPacketMarker(signal, 14));
 	}
