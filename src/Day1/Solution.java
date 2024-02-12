@@ -22,12 +22,8 @@ public class Solution {
 	private static void Part2(List<Elf> listOfElfs) {
 		List<Integer> top3Elfs = new ArrayList<>();
 		for (int i = 0; i < 3; i++) {
-			top3Elfs.add(listOfElfs.stream().map(Elf::totalCalories).reduce(0, (x, y) -> {
-				if (top3Elfs.contains(y))
-					return x;
-				else
-					return Math.max(x, y);
-			}));
+			top3Elfs.add(listOfElfs.stream().map(Elf::totalCalories).reduce(0,
+					(x, y) -> top3Elfs.contains(y) ? x : Math.max(x, y)));
 		}
 		System.out.println("Part 2 -> " + top3Elfs.stream().reduce(0, Integer::sum));
 	}
