@@ -18,6 +18,12 @@ public class Pos {
 		}
 	}
 
+	public Pos moveTo(DIRECTION direction) {
+		Pos copy = copy();
+		copy.move(direction);
+		return copy;
+	}
+
 	public int getY() {
 		return y;
 	}
