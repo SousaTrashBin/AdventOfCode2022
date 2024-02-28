@@ -6,29 +6,26 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
-	public static void main(String[] args) throws IOException {
-		Folder mainSystemFolder = new Folder("/", null);
-		// Represents a list that contains every single folder on the system
-		List<Folder> foldersList = new ArrayList<>();
-		buildFileSystem(mainSystemFolder, foldersList);
-		System.out.println("Part 1 -> "
-				+ foldersList.stream().map(Folder::getSize).filter(x -> x <= 100000).mapToInt(x -> x).sum());
-		int minRequiredSpace = 30000000 - (70000000 - mainSystemFolder.getSize());
-		System.out.println("Part 2 -> " + foldersList.stream().map(Folder::getSize)
-				.filter(size -> size >= minRequiredSpace).reduce(Math::min).orElse(0));
-		Folder.printFolderStructure(mainSystemFolder, "");
+import AuxiliarClasses.Day;
+
+public class Day7 extends Day {
+	private final Folder mainSystemFolder = new Folder("/", null);
+	private final List<Folder> foldersList = new ArrayList<>();
+
+	public Day7() throws IOException {
+		super(7);
+		buildFileSystem();
 	}
 
-	private static void buildFileSystem(Folder mainSystemFolder, List<Folder> allFolders) throws IOException {
+	private void buildFileSystem() throws IOException {
 		Folder currentFolder = null;
-		List<String> lines = Files.readString(Path.of("inputFiles/Day7.txt")).lines().toList();
+		List<String> lines = Files.readString(Path.of(super.getFile())).lines().toList();
 		for (int i = 0; i < lines.size(); i++) {
 			String currentLine = lines.get(i);
 			// Handles the change directory command (cd)
 			if (currentLine.startsWith("$ cd")) {
 				// Updates the current folder
-				currentFolder = cdCommand(mainSystemFolder, allFolders, currentLine, currentFolder);
+				currentFolder = cdCommand(mainSystemFolder, foldersList, currentLine, currentFolder);
 			} // Handles the list all system files on current directory command (ls)
 			else if (currentLine.startsWith("$ ls")) {
 				// Updates the index accordingly so it skips all the lines that represent a
@@ -69,5 +66,18 @@ public class Solution {
 			}
 		}
 		return i;
+	}
+
+	@Override
+	public String Part1() {
+		return String
+				.valueOf(foldersList.stream().map(Folder::getSize).filter(x -> x <= 100000).mapToInt(x -> x).sum());
+	}
+
+	@Override
+	public String Part2() {
+		int minRequiredSpace = 30000000 - (70000000 - mainSystemFolder.getSize());
+		return foldersList.stream().map(Folder::getSize).filter(size -> size >= minRequiredSpace).reduce(Math::min)
+				.orElse(0).toString();
 	}
 }

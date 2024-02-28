@@ -9,6 +9,10 @@ public class RuckSack {
 		secondCompartment = s.substring(s.length() / 2);
 	}
 
+	public String getItems() {
+		return firstCompartment + secondCompartment;
+	}
+
 	public static int getPriorityNumber(char c) {
 		if (Character.isLowerCase(c))
 			return c - 'a' + 1;

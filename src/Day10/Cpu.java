@@ -3,7 +3,7 @@ package Day10;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPU {
+public class Cpu {
 	private int registerX = 1;
 	private final List<Integer> listOfRegisterXValues = new ArrayList<>();
 	private final List<Integer> listOfWantedValues = List.of(20, 60, 100, 140, 180, 220);

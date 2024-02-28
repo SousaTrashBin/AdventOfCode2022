@@ -1,6 +1,9 @@
 package Day9;
 
-import static Day9.DIRECTION.*;
+import AuxiliarClasses.Direction;
+import AuxiliarClasses.Pos;
+
+import static AuxiliarClasses.Direction.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +11,7 @@ import java.util.Map;
 
 public class Bridge {
 	private final List<Pos> knotList;
-	private final Map<String, DIRECTION> directionMap = Map.of("R", RIGHT, "D", DOWN, "U", UP, "L", LEFT);
+	private final Map<String, Direction> directionMap = Map.of("R", RIGHT, "D", DOWN, "U", UP, "L", LEFT);
 	private final List<Pos> positionsThatLastKnotVisited;
 
 	public Bridge(int i) {
@@ -30,7 +33,7 @@ public class Bridge {
 	}
 
 	public void move(String direction, String howManyTimes) {
-		DIRECTION d = directionMap.get(direction);
+		Direction d = directionMap.get(direction);
 		List<Pair<Pos, Pos>> listOfPairs = makeListOfPairs();
 		for (int i = 0; i < Integer.parseInt(howManyTimes); i++) {
 			knotList.getFirst().move(d);

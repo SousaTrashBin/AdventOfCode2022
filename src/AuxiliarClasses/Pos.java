@@ -1,4 +1,4 @@
-package Day9;
+package AuxiliarClasses;
 
 public class Pos {
 	private int x;
@@ -9,7 +9,7 @@ public class Pos {
 		this.y = y;
 	}
 
-	public void move(DIRECTION direction) {
+	public void move(Direction direction) {
 		switch (direction) {
 		case UP -> y += 1;
 		case DOWN -> y -= 1;
@@ -18,7 +18,7 @@ public class Pos {
 		}
 	}
 
-	public Pos moveTo(DIRECTION direction) {
+	public Pos moveTo(Direction direction) {
 		Pos copy = copy();
 		copy.move(direction);
 		return copy;

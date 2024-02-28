@@ -3,13 +3,13 @@ package Day12;
 import java.util.ArrayList;
 import java.util.List;
 
-import Day9.DIRECTION;
-import Day9.Pos;
+import AuxiliarClasses.Direction;
+import AuxiliarClasses.Pos;
 
 public class HillClimb {
-	int[][] grid;
-	Pos S;
-	Pos E;
+	private final int[][] grid;
+	private final Pos S;
+	private final Pos E;
 
 	public HillClimb(String file) {
 		grid = file.lines().map(x -> x.chars().toArray()).toArray(int[][]::new);
@@ -54,10 +54,10 @@ public class HillClimb {
 		while (startingPositions.stream().filter(x -> x.equals(E)).toList().isEmpty()) {
 			for (Pos pos : startingPositions) {
 				int currentHeight = getHeight(pos);
-				tryToAdd(pos.moveTo(DIRECTION.UP), currentHeight, positionsToVerify, visitedGrid);
-				tryToAdd(pos.moveTo(DIRECTION.LEFT), currentHeight, positionsToVerify, visitedGrid);
-				tryToAdd(pos.moveTo(DIRECTION.RIGHT), currentHeight, positionsToVerify, visitedGrid);
-				tryToAdd(pos.moveTo(DIRECTION.DOWN), currentHeight, positionsToVerify, visitedGrid);
+				tryToAdd(pos.moveTo(Direction.UP), currentHeight, positionsToVerify, visitedGrid);
+				tryToAdd(pos.moveTo(Direction.LEFT), currentHeight, positionsToVerify, visitedGrid);
+				tryToAdd(pos.moveTo(Direction.RIGHT), currentHeight, positionsToVerify, visitedGrid);
+				tryToAdd(pos.moveTo(Direction.DOWN), currentHeight, positionsToVerify, visitedGrid);
 			}
 			startingPositions = positionsToVerify;
 			positionsToVerify = new ArrayList<>();
